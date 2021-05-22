@@ -7,6 +7,10 @@ bucket (S3).
 Foto será obtida de forma arbitrária, dentre aquelas localizadas com o tema "felicidade" no serviço Unsplash (https://unsplash.com). Regras devem ser
 observadas para o consumo em conformidade com as orientações deste serviço.
 
+## Instalação
+
+- `npm i foto-do-dia`
+
 ## Configuração
 
 - Credenciais da AWS empregadas para depositar arquivo em um bucket (S3).
@@ -19,7 +23,7 @@ observadas para o consumo em conformidade com as orientações deste serviço.
 ## Execução
 
 - `npm install`
-- `node index.js`.
+- `node node_modules\foto-do-dia\index.js`.
 
 ## Estratégia
 
