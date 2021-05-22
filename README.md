@@ -16,6 +16,11 @@ observadas para o consumo em conformidade com as orientações deste serviço.
 - Variável de ambiente `BUCKET_NAME`. Bucket no qual o arquivo obtido
   será depositado.
 
+## Execução
+
+- `npm install`
+- `node index.js`.
+
 ## Estratégia
 
 - Identificar e disponibilizar foto de backup (foto-fallback.jpg). Esta foto será empregada quando o processo de atualização da foto a ser exibida não for realizado de forma satisfatória.
