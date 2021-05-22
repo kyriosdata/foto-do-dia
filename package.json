@@ -1,0 +1,31 @@
+{
+  "name": "foto-do-dia",
+  "version": "1.0.0",
+  "description": "Proxy para obtenção de fotos da Unsplash",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyriosdata/foto-do-dia.git"
+  },
+  "keywords": [
+    "unsplash",
+    "felicidade",
+    "fotos"
+  ],
+  "author": "Fábio Nogueira de Lucena",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kyriosdata/foto-do-dia/issues"
+  },
+  "homepage": "https://github.com/kyriosdata/foto-do-dia#readme",
+  "dependencies": {
+    "aws-sdk": "^2.912.0",
+    "node-fetch": "^2.6.1",
+    "unsplash-js": "^7.0.11"
+  }
+}
