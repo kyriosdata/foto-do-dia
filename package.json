@@ -1,6 +1,6 @@
 {
   "name": "foto-do-dia",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Proxy para obtenção de fotos da Unsplash",
   "type": "module",
   "main": "index.js",
