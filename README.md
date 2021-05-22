@@ -4,9 +4,8 @@ Disponibilizar foto de fundo, possivelmente para tela de boas-vindas
 ou login, no arquivo "foto-do-dia.jpg" em
 bucket (S3).
 
-Foto deve ter como tema a "felicidade" e, para evitar
-repetição que pode ser cansativa, deve ser atualizada
-diariamente.
+Foto será obtida de forma arbitrária, dentre aquelas localizadas com o tema "felicidade" no serviço Unsplash (https://unsplash.com). Regras devem ser
+observadas para o consumo em conformidade com as orientações deste serviço.
 
 ## Configuração
 
