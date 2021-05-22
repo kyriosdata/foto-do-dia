@@ -1,7 +1,7 @@
 ## Objetivo
 
 Disponibilizar foto de fundo, possivelmente para tela de boas-vindas
-ou login, possivelmente, no arquivo "foto-do-dia.jpg" em
+ou login, no arquivo "foto-do-dia.jpg" em
 bucket (S3).
 
 Foto deve ter como tema a "felicidade" e, para evitar
