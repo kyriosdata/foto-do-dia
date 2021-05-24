@@ -27,6 +27,8 @@ Os créditos são documentados em JSON no arquivo "foto-do-dia.json".
 
 ## Estratégia
 
-- Identificar e disponibilizar foto de backup (foto-fallback.jpg). Esta foto será empregada quando o processo de atualização da foto a ser exibida não for realizado de forma satisfatória.
+- **foto-fallback.jpg** e **foto-fallback.json** contém, respectivamente, a foto e os créditos correspondentes. Esta é a foto a ser empregada caso
+  a atualização falhe ou não seja possível adquirir a foto do dita.
 
-- Uma nova imagem é sorteada e baixada a cada dia no arquivo foto-do-dia.jpg.
+- **foto-do-dia.jpg** e **foto-do-dia.json** contém, respectivamente, a
+  foto e os créditos correspondentes da foto do dia.
