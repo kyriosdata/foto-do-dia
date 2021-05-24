@@ -17,6 +17,18 @@ import uploadToBucket from "./s3.js";
 const sortear = (limite) => Math.floor(Math.random() * limite) + 1;
 const disco = (bucket, nome, buffer) => fs.writeFileSync(nome, buffer);
 
+/**
+ * Monta sequência de caracteres que estabelece atribuição
+ * legal exigida pela Unsplash para exibição de fotos.
+ *
+ * @param {string} html Endereço do fotógrafo no Unsplash
+ * @param {string} fotografo Nome do fotógrafo
+ * @returns Atribuição legal da foto conforme Unsplash
+ */
+function atribuicao(html, fotografo) {
+  return `Foto de <a href="${html}?utm_source=regulacao&utm_medium=referral">${fotografo}</a> no <a href="https://unsplash.com/?utm_source=regulacao&utm_medium=referral">Unsplash</a>`;
+}
+
 async function obtenhaFotoDoDia(registraEm, bucket, filename) {
   function downloadImage(imagemUrl) {
     fetch(imagemUrl, { mode: "no-cors" })
@@ -32,7 +44,7 @@ async function obtenhaFotoDoDia(registraEm, bucket, filename) {
       fetch,
     });
 
-    const params = { query: "happiness", orderBy: "relevant" };
+    const params = { query: "natureza brasil", orderBy: "relevant" };
 
     const todas = await unsplash.search.getPhotos(params);
 
@@ -72,11 +84,9 @@ async function obtenhaFotoDoDia(registraEm, bucket, filename) {
     downloadImage(sorteada.urls.raw);
   } catch (error) {
     console.log(error.toString());
+    console.log(sorteada);
+    console.log("indice", indexFotoSorteada);
   }
 }
 
 obtenhaFotoDoDia(uploadToBucket, process.env.BUCKET_NAME, "foto-do-dia.jpg");
-
-function atribuicao(html, fotografo) {
-  return `Foto de <a href="${html}?utm_source=regulacao&utm_medium=referral">${fotografo}</a> no <a href="https://unsplash.com/?utm_source=regulacao&utm_medium=referral">Unsplash</a>`;
-}
