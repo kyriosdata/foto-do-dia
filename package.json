@@ -3,7 +3,7 @@
   "version": "1.0.3",
   "description": "Proxy para obtenção de fotos da Unsplash",
   "type": "module",
-  "main": "index.js",
+  "main": "atualizaFotoDoDia.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js"

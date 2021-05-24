@@ -32,3 +32,11 @@ Os créditos são documentados em JSON no arquivo "foto-do-dia.json".
 
 - **foto-do-dia.jpg** e **foto-do-dia.json** contém, respectivamente, a
   foto e os créditos correspondentes da foto do dia.
+
+## Observação
+
+Busca do Unsplash, em alguns cenários, retornam fotos cuja imagem não
+reflete adequadamente os critérios de busca. Em consequência, pode ser
+necessário, por segurança, executar a curadoria do conjunto de fotos
+a ser considerado, guardar os identificadores destas fotos e só
+realizar o sorteio da foto do dia entre aquelas previamente avaliadas.

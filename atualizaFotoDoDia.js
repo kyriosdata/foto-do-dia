@@ -29,7 +29,7 @@ function atribuicao(html, fotografo) {
   return `Foto de <a href="${html}?utm_source=regulacao&utm_medium=referral">${fotografo}</a> no <a href="https://unsplash.com/?utm_source=regulacao&utm_medium=referral">Unsplash</a>`;
 }
 
-async function obtenhaFotoDoDia(registraEm, bucket, filename) {
+async function atualizaFotoDoDia(registraEm, bucket, filename) {
   function downloadImage(imagemUrl) {
     fetch(imagemUrl, { mode: "no-cors" })
       .then((response) => response.buffer())
@@ -89,4 +89,4 @@ async function obtenhaFotoDoDia(registraEm, bucket, filename) {
   }
 }
 
-obtenhaFotoDoDia(uploadToBucket, process.env.BUCKET_NAME, "foto-do-dia.jpg");
+atualizaFotoDoDia(uploadToBucket, process.env.BUCKET_NAME, "foto-do-dia.jpg");
