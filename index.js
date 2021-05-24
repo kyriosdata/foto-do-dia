@@ -22,7 +22,7 @@ async function obtenhaFotoDoDia(registraEm, bucket, filename) {
     fetch(imagemUrl, { mode: "no-cors" })
       .then((response) => response.buffer())
       .then((buffer) => {
-        registraEm(bucket, filename, buffer);
+        registraEm(bucket, filename, buffer, "image/jpeg");
       });
   }
 
@@ -50,9 +50,33 @@ async function obtenhaFotoDoDia(registraEm, bucket, filename) {
     const fotos = relevante.response.results;
     const indexFotoSorteada = sortear(fotos.length);
 
+    // Foto sorteada para o dia
     const sorteada = fotos[indexFotoSorteada];
+
+    // Monta créditos (exigência Unsplash)
+    const html = sorteada.user.links.html;
+    const nome = sorteada.user.name;
+    const creditos = { creditos: atribuicao(html, nome) };
+    uploadToBucket(
+      bucket,
+      "foto-do-dia.json",
+      JSON.stringify(creditos),
+      "application/json"
+    );
+
+    // Créditos (exigido pelo unsplash)
+    unsplash.photos.trackDownload({
+      downloadLocation: sorteada.links.download_location,
+    });
+
     downloadImage(sorteada.urls.raw);
-  } catch (error) {}
+  } catch (error) {
+    console.log(error.toString());
+  }
 }
 
 obtenhaFotoDoDia(uploadToBucket, process.env.BUCKET_NAME, "foto-do-dia.jpg");
+
+function atribuicao(html, fotografo) {
+  return `Foto de <a href="${html}?utm_source=regulacao&utm_medium=referral">${fotografo}</a> no <a href="https://unsplash.com/?utm_source=regulacao&utm_medium=referral">Unsplash</a>`;
+}

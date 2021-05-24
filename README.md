@@ -6,6 +6,7 @@ bucket (S3).
 
 Foto será obtida de forma arbitrária, dentre aquelas localizadas com o tema "felicidade" no serviço Unsplash (https://unsplash.com). Regras devem ser
 observadas para o consumo em conformidade com as orientações deste serviço.
+Os créditos são documentados em JSON no arquivo "foto-do-dia.json".
 
 ## Instalação
 
@@ -13,10 +14,9 @@ observadas para o consumo em conformidade com as orientações deste serviço.
 
 ## Configuração
 
-- Credenciais da AWS empregadas para depositar arquivo em um bucket (S3).
-  Em geral no arquivo credentials, criado no diretório .aws.
 - Variável de ambiente `UNSPLASH_ACCESS_KEY` contendo chave para acesso
   ao Unsplash (https://unsplash.com/). Consulte documentação pertinente para acesso em conformidade com as exigências.
+- Credenciais da AWS com autorização de escrita em bucket (S3) utilizado para armazenar foto obtida do serviços Unsplash. Em geral no arquivo credentials, criado no diretório .aws contido no diretório de trabalho do usuário.
 - Variável de ambiente `BUCKET_NAME`. Bucket no qual o arquivo obtido
   será depositado.
 
